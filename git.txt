@@ -1,0 +1,94 @@
+GIT
+
+
+git1
+
+* to configure git
+	git config --global user.name "name"
+	git config --global user.email "email"
+
+* git init -> manage files under these folders
+
+* git add file -> to add a file to git
+
+* git commit -m 'first commit' -> to commit the changes or file.
+
+after make changes in file you can add and commit with a different message.
+
+then 
+* git log -> displays time and date of commits 
+
+* git show master~1:file -> displays file before last commit.
+
+To start a branch
+
+* git checkout -b branchname
+ 
+ after the execution of this command, git add command adds  files to the newly created branch.
+there is a default branch master.
+
+to checkout to master use command
+* git checkout master
+
+to merge new branch to master
+
+* git merge branchname	
+
+to delete a branch
+* git branch -d branchname 
+
+
+git2
+
+In small team of two-persons, we can create git repository on a machine in our network. and designate it as central repository.
+both co-developers creates copy of central repository
+both can commit code to local repository
+
+* git init --bare -> to create a bare repository
+
+ther is 3 folders
+eg:
+	proj-server (central repository)
+	proj-dev1 (co-developer1)
+	proj-dev2 (co-developer1)
+
+* git clone proj-server proj-dev1  -> to create copy of central repository
+
+* git push origin master -> to push changes in local repository to central repository
+
+when co-developer2 push change after co-developer1 pushed, it cause som error.
+
+this is because developer1 has pushed some changes. if developer2 wants to push her changes, she has to fetch and merge the content of central repository to her local repository
+
+* git fetch origin
+
+* git merge origin/master
+
+then 
+git push origin master
+
+
+github.mp4
+----------
+
+
+need to create ssh key on our machine. then copy it to git hub account
+command is  
+
+*  ssh-keygen -t rsa -C "hello@gmail.com"
+
+now ssh-keygen is created folder .ssh
+
+there is 2 files under this folder.
+then  open id_rsa.pub in vi and coy the content to github account then  enter
+
+after that execute ssh -T git@github.com in terminal.
+ then create repository in github
+
+* push the content of local repo to remote github account by
+git remote add origin git@github.com:amruthaarun/test.git
+
+origin is a shortcut notation
+
+git push -u origin master
+

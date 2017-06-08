@@ -1,0 +1,50 @@
+shell basics
+
+* touch -> creates empty files. we can create multiple empty files using single command.
+	eg: touch a ab abc def
+
+* '*' ->special character. a* interprets as file start with a 
+
+* commands will not work for single quotes. but it work for double quotes.
+
+* rm >abc result in error.
+to store the error details in file we have to use 
+	rm 2>abc
+rm > abc doesn't work because the > symbol performs redirection only to the standard output. It doesnot redirect the standard error.
+
+	0 -> standard input
+	1 -> standard output
+	2 -> standard error
+
+* pipes are used to connect output of one command to the input of another command
+
+multiusage pipeline is used to connect any number of commands
+
+
+*a=1 in shell prompt
+ it means a is a shell variable. there do not have any space between a,= and 1.
+
+the value can be retrieved by using command
+echo $a
+
+* the variable you created in parent shell canot be accessed in sub shell.
+
+export b 
+ this command is used to copy the shell variable b to sub shell
+
+
+* environment variable
+
+Shell variable whose values are available in sub-shells are called environment variables
+	eg: PATH
+the value of PATH is colon seperated list of directory names
+
+to run external commands, shell looks for the correponding executable file  in the folders given in PATH variable.
+
+ls,date,who ... are external commands. they will not work  if path variable not set
+
+
+
+
+
+

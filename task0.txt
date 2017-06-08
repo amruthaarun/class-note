@@ -1,0 +1,164 @@
+cmdline1.mp4
+------------
+
+* date, echo, pwd, ls, man are some important commands
+
+cmdline2.mp4
+-------------
+
+* ls -l is a default option. it displays permissions, size, user etc.
+
+* Standard output redirection:
+	eg: echo hello > abc
+	    cat abc
+	it prints hello on the terminal
+
+* cp: copy
+  rm:rmove
+  mv :rename
+
+* mkdir: to create new directory
+  cd : to change directory
+  ls : to display the list of files
+  cd .. :to go back to the previous folder
+
+grep.mp4
+---------
+
+* wc -> word count. it displays number of characters, words and lines.
+	we can use -l with wc to extract the number of lines in the file. similiarly -c to count character , -w to count words
+
+* grep ->format is
+	grep data file
+	used for search the data in file. it will display all words containing data.
+	
+	use '^data' will display words start with data
+
+	use $ at end in pattern to specify that , it display the words end with data
+
+	we can use ^ and $ in a single pattern
+	
+	. means one occurance of any character
+	
+	eg: grep '^...$' words
+		display all lines with 4 characters
+	
+	* means you basically try to match zero more occurance of any character 
+
+
+* sed -> performs pattern matching as well as pattern replacing
+
+	eg: sed 's/cat/dog/' data1
+
+* sort -> to sorts the file
+
+* head ->shows the first few lines in the file
+
+
+* tail ->shows the last few lines in the file.
+	it is usually used with command -f.
+
+ln.mp4
+-------
+
+* ln -> link. By using ln command we can access one file through another name
+
+ ln -s ->creates a symbolic link
+
+* dd -> it is a special kind of copy.
+	eg: dd if=/dev/zero of=abcd bs=100 count=20
+
+	if => input file
+	of => output file
+	bs => block size
+* xargs, find, tee
+
+permissiion.mp4
+----------------
+
+* ls -l will display the permissions of a file, owner of file, user, date.
+
+the very first bit in the output says the type , whether it is file or folder or symbolic link.
+remaining 9 bit grouped into 3	
+	first 3 bit represents user permissions
+	second 3 bit represents group permissions
+	and the last 3 bit represents others permission.
+	r -> readable
+	w -> writable
+	x -> executable
+we can change the permission by using chmod command.
+
+process.mp4
+------------
+
+* ps -> process status
+
+the command ps ax displays pid, tty, stat, time, command
+
+the value of stat may be s(currently sleeepng)
+			R(running)
+			T(temporarily suspended)
+there is top and free command.
+
+	free command displays the memory details.
+
+* in vi ctrl-z used for temporarily suspend
+	fg to go to background 
+
+
+tar.mp4
+--------
+
+* To create a tar we use command
+	tar cvf one.tar one
+	
+	c -> create
+
+   To extract from tar
+	tar xvf one.tar
+* we can use gzip also
+	gzip one.tar =>one.tarz
+
+*zipping and tar can be do together by
+	tar cvfz one.tgz one
+
+vim.mp4
+-------
+two modes
+	command mode
+	insert mode
+* :setnu -> to set line number
+
+  :set nonu ->to unset line number
+
+  shift g -> end of the file
+	1 -> beginnig of file
+	
+   dd => delete or cut
+   p=>paste
+   yy => copy
+   u => undo
+* :e def -> to go to another dile called def
+  
+: 2,4d ->to cut lines from 2 to 4
+
+ctags *.c -> it creates a file called tags.
+
+
+directory.mp4
+-------------
+
+there is many important folders.
+they are bin, sbin, etc, dev ...
+
+* bin -> contains machine code of very important programs. They are executed  by the user or normal user.
+
+* sbin -> it is similiar to bin. difference is these are executed by super user
+
+* etc -> it is a configuration file like passwd
+
+* dev -> contain special files like null, zero etc. 
+
+*home -> login directory of all users
+
+
